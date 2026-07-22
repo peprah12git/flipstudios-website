@@ -1,0 +1,86 @@
+.contact {
+  position: relative;
+  overflow: hidden;
+  background-color: #0f2b24;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 90px 0;
+}
+
+.contact__overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 100% at 50% 0%, rgba(22, 63, 52, 0.85) 0%, rgba(15, 43, 36, 0.92) 55%);
+  pointer-events: none;
+}
+
+.contact__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  text-align: center;
+}
+
+.contact__inner h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.contact__inner > p {
+  color: var(--color-text-muted);
+  margin: 0 0 40px;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+.contact__form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.contact__form input,
+.contact__form textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-card-border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  font-family: inherit;
+  resize: vertical;
+}
+
+.contact__form input::placeholder,
+.contact__form textarea::placeholder {
+  color: rgba(185, 201, 194, 0.6);
+}
+
+.contact__form input:focus,
+.contact__form textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.contact__form .btn {
+  align-self: center;
+  margin-top: 8px;
+  min-width: 160px;
+}
+
+.contact__success {
+  text-align: center;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin: 0;
+}
