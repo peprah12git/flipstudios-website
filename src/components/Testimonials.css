@@ -19,6 +19,16 @@
   position: relative;
   border-radius: 16px;
   overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px -12px rgba(15, 43, 36, 0.35);
+}
+
+.testimonial-card--quote:hover {
+  border-color: var(--color-accent);
 }
 
 .testimonial-card--photo {

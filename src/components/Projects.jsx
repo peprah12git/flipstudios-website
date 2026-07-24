@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { ArrowRightIcon } from './Icons'
 import './Projects.css'
 
@@ -23,6 +24,16 @@ const PROJECTS = [
 ]
 
 function Projects() {
+  const trackRef = useRef(null)
+
+  const scrollByCard = (direction) => {
+    const track = trackRef.current
+    if (!track) return
+    const card = track.querySelector('.project-card')
+    const amount = card ? card.offsetWidth + 24 : track.offsetWidth
+    track.scrollBy({ left: direction * amount, behavior: 'smooth' })
+  }
+
   return (
     <section id="studios" className="projects">
       <div className="container">
@@ -31,12 +42,32 @@ function Projects() {
             <h2>Explore FlipStudios</h2>
             <p>We transform digital ideas to impactful experiences.</p>
           </div>
-          <a href="#studios" className="projects__view-all">
-            View all <ArrowRightIcon width={16} height={16} />
-          </a>
+          <div className="projects__controls">
+            <a href="#studios" className="projects__view-all">
+              View all <ArrowRightIcon width={16} height={16} />
+            </a>
+            <div className="projects__nav">
+              <button
+                type="button"
+                className="projects__nav-btn"
+                aria-label="Previous project"
+                onClick={() => scrollByCard(-1)}
+              >
+                <ArrowRightIcon width={16} height={16} className="projects__nav-icon--prev" />
+              </button>
+              <button
+                type="button"
+                className="projects__nav-btn"
+                aria-label="Next project"
+                onClick={() => scrollByCard(1)}
+              >
+                <ArrowRightIcon width={16} height={16} />
+              </button>
+            </div>
+          </div>
         </div>
 
-        <div className="projects__grid">
+        <div className="projects__track" ref={trackRef}>
           {PROJECTS.map((p) => (
             <article className="project-card" key={p.name}>
               <div className="project-card__thumb" style={{ background: p.gradient }} />
