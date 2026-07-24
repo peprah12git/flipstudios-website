@@ -30,9 +30,10 @@
 }
 
 .hero h1 {
+  font-family: "Poppins", var(--font-sans);
   font-size: clamp(2rem, 5vw, 3.4rem);
   line-height: 1.15;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0 0 20px;
 }
 
