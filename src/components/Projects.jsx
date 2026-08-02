@@ -1,4 +1,7 @@
 import { ArrowRightIcon } from './Icons'
+import { PlaceholderThumb } from './PlaceholderThumb'
+import { BrowserFrame } from './BrowserFrame'
+import { Reveal, RevealItem } from './Reveal'
 import './Projects.css'
 
 const PROJECTS = [
@@ -6,19 +9,16 @@ const PROJECTS = [
     name: 'Clima',
     tag: 'Smart Weather',
     text: 'A minimalist weather experience that blends accuracy with elegance, delivering real-time forecasts in a calm, modern interface.',
-    gradient: 'linear-gradient(135deg, #f4d35e 0%, #8a5a2b 60%, #2b1d0e 100%)',
   },
   {
     name: 'NovaCart',
     tag: 'AI-Powered E-Commerce',
     text: 'An intelligent shopping platform that personalizes product discovery and automates the buying journey through adaptive AI.',
-    gradient: 'linear-gradient(135deg, #6b7280 0%, #374151 60%, #111827 100%)',
   },
   {
     name: 'Pulse',
-    tag: '',
+    tag: 'Data Visualization',
     text: 'A data visualization web-app that simplifies complex datasets.',
-    gradient: 'linear-gradient(135deg, #22314f 0%, #1a2a52 50%, #0e3b52 100%)',
   },
 ]
 
@@ -28,6 +28,7 @@ function Projects() {
       <div className="container">
         <div className="projects__header">
           <div>
+            <span className="eyebrow">Our Work</span>
             <h2>Explore FlipStudios</h2>
             <p>We transform digital ideas to impactful experiences.</p>
           </div>
@@ -36,16 +37,32 @@ function Projects() {
           </a>
         </div>
 
-        <div className="projects__grid">
-          {PROJECTS.map((p) => (
-            <article className="project-card" key={p.name}>
-              <div className="project-card__thumb" style={{ background: p.gradient }} />
-              <h3>
-                {p.name}
-                {p.tag ? <span> — {p.tag}</span> : null}
-              </h3>
-              <p>{p.text}</p>
-            </article>
+        <div className="projects__list">
+          {PROJECTS.map((p, i) => (
+            <Reveal
+              as="article"
+              className={`project-row ${i % 2 ? 'is-reverse' : ''}`}
+              key={p.name}
+            >
+              <RevealItem className="project-row__frame-wrap">
+                <BrowserFrame
+                  url={`flipstudios.app/${p.name.toLowerCase()}`}
+                  className="project-row__frame"
+                >
+                  <PlaceholderThumb
+                    label={p.name[0]}
+                    index={i}
+                    className="project-row__thumb"
+                  />
+                </BrowserFrame>
+              </RevealItem>
+
+              <RevealItem className="project-row__text">
+                {p.tag ? <span className="project-row__tag">{p.tag}</span> : null}
+                <h3>{p.name}</h3>
+                <p>{p.text}</p>
+              </RevealItem>
+            </Reveal>
           ))}
         </div>
       </div>

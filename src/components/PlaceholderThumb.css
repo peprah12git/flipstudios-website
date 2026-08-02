@@ -1,0 +1,32 @@
+.placeholder-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-width) solid var(--color-card-border);
+  overflow: hidden;
+}
+
+.placeholder-thumb span {
+  font-family: var(--font-mono);
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  opacity: 0.55;
+}
+
+.placeholder-thumb__icon {
+  color: var(--color-text-muted);
+  opacity: 0.5;
+}
+
+.placeholder-thumb--0 {
+  background: var(--gray-900);
+}
+
+.placeholder-thumb--1 {
+  background: var(--gray-800);
+}
+
+.placeholder-thumb--2 {
+  background: var(--gray-700);
+}

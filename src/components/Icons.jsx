@@ -110,6 +110,33 @@ export function ArrowRightIcon(props) {
   )
 }
 
+export function CheckIcon(props) {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M4 12.5 9.5 18 20 6" />
+    </svg>
+  )
+}
+
+export function CheckBadgeIcon(props) {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" {...props}>
+      <path
+        fill="var(--color-accent)"
+        d="M12 2 14.5 4.3 17.8 3.9 18.6 7.1 21.5 8.8 20.3 12 21.5 15.2 18.6 16.9 17.8 20.1 14.5 19.7 12 22 9.5 19.7 6.2 20.1 5.4 16.9 2.5 15.2 3.7 12 2.5 8.8 5.4 7.1 6.2 3.9 9.5 4.3Z"
+      />
+      <path
+        d="M8.5 12.2 10.8 14.5 15.5 9.5"
+        stroke="var(--color-on-accent)"
+        strokeWidth="1.6"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
 export function QuoteIcon(props) {
   return (
     <svg width="28" height="22" viewBox="0 0 28 22" fill="currentColor" {...props}>

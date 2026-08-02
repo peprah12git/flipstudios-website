@@ -1,0 +1,131 @@
+.why-art {
+  position: relative;
+  margin-top: auto;
+  padding-top: var(--space-6);
+  height: 160px;
+}
+
+/* Rings */
+.why-art--ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-art__rings {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.why-art__rings circle {
+  fill: none;
+  stroke: var(--color-card-border);
+  stroke-width: 1;
+  stroke-dasharray: 3 6;
+}
+
+.why-art__icon {
+  position: relative;
+  z-index: 1;
+  color: var(--color-text-muted);
+}
+
+.why-art__dot {
+  position: absolute;
+  top: 22%;
+  right: 26%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+/* Rows (pricing / tracker mockups) */
+.why-art--rows {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-2);
+  height: 100%;
+}
+
+.why-art__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--color-bg);
+  border: var(--border-width) solid var(--color-card-border);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+.why-art__row-label {
+  color: var(--color-text-muted);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.why-art__row-value {
+  color: var(--color-text);
+  filter: blur(3px);
+  white-space: nowrap;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.why-art__row-check {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  border: var(--border-width) solid var(--color-card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-on-accent);
+}
+
+.why-art__row-check.is-done {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.why-art__row-bar {
+  width: 56px;
+  height: 4px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-card-border);
+  overflow: hidden;
+}
+
+.why-art__row-bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--gray-400);
+}
+
+/* Network */
+.why-art--network svg {
+  width: 100%;
+  height: 100%;
+}
+
+.why-art--network line {
+  stroke: var(--color-card-border);
+  stroke-width: 1;
+}
+
+.why-art--network circle {
+  fill: var(--gray-500);
+}
+
+.why-art--network circle.is-accent {
+  fill: var(--color-accent);
+}

@@ -1,49 +1,40 @@
 .contact {
-  position: relative;
-  overflow: hidden;
-  background-color: #0f2b24;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 90px 0;
-}
-
-.contact__overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(120% 100% at 50% 0%, rgba(22, 63, 52, 0.85) 0%, rgba(15, 43, 36, 0.92) 55%);
-  pointer-events: none;
+  background-color: var(--color-bg-darker);
+  padding: var(--space-24) 0;
 }
 
 .contact__inner {
-  position: relative;
-  z-index: 1;
   max-width: 560px;
+  margin: 0 auto;
   text-align: center;
+}
+
+.contact__inner .eyebrow {
+  display: block;
+  margin-bottom: var(--space-3);
 }
 
 .contact__inner h2 {
   font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 700;
-  margin: 0 0 12px;
+  margin: 0 0 var(--space-3);
 }
 
 .contact__inner > p {
   color: var(--color-text-muted);
-  margin: 0 0 40px;
+  margin: 0 0 var(--space-10);
 }
 
 .contact__form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-5);
   text-align: left;
 }
 
 .contact__form label {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--space-2);
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--color-text-muted);
@@ -51,19 +42,20 @@
 
 .contact__form input,
 .contact__form textarea {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--color-card-border);
-  border-radius: 10px;
+  background: var(--color-card);
+  border: var(--border-width) solid var(--color-card-border);
+  border-radius: var(--radius-md);
   padding: 12px 16px;
   font-size: 0.95rem;
   color: var(--color-text);
   font-family: inherit;
   resize: vertical;
+  transition: border-color var(--duration-fast) var(--ease-out);
 }
 
 .contact__form input::placeholder,
 .contact__form textarea::placeholder {
-  color: rgba(185, 201, 194, 0.6);
+  color: var(--gray-500);
 }
 
 .contact__form input:focus,
@@ -74,7 +66,7 @@
 
 .contact__form .btn {
   align-self: center;
-  margin-top: 8px;
+  margin-top: var(--space-2);
   min-width: 160px;
 }
 

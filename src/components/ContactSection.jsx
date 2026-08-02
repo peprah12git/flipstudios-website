@@ -1,6 +1,6 @@
 import { useState } from 'react'
+import { Reveal, RevealItem } from './Reveal'
 import './ContactSection.css'
-import contactBg from '../../images/why contact us.png'
 
 function ContactSection() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
@@ -17,17 +17,21 @@ function ContactSection() {
   }
 
   return (
-    <section
-      id="contact"
-      className="contact"
-      style={{ backgroundImage: `url(${contactBg})` }}
-    >
-      <div className="contact__overlay" aria-hidden="true" />
-      <div className="container contact__inner">
-        <h2>Let's talk about your next project</h2>
-        <p>Tell us exactly what you're looking for and we will contact you to discuss your project.</p>
+    <section id="contact" className="contact bg-dot-grid">
+      <Reveal className="container contact__inner">
+        <RevealItem as="span" className="eyebrow">
+          Contact
+        </RevealItem>
+        <RevealItem as="h2">Let's talk about your next project</RevealItem>
+        <RevealItem as="p">
+          Tell us exactly what you're looking for and we will contact you to discuss your project.
+        </RevealItem>
 
-        <form className="contact__form" onSubmit={handleSubmit}>
+        <RevealItem
+          as="form"
+          className="contact__form"
+          onSubmit={handleSubmit}
+        >
           <label>
             Name
             <input
@@ -69,8 +73,8 @@ function ContactSection() {
           </button>
 
           {submitted && <p className="contact__success">Thanks! We'll be in touch soon.</p>}
-        </form>
-      </div>
+        </RevealItem>
+      </Reveal>
     </section>
   )
 }
