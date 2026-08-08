@@ -86,7 +86,7 @@
 
 .why__checklist li svg {
   flex-shrink: 0;
-  color: var(--color-accent);
+  color: var(--color-accent-text);
 }
 
 @media (max-width: 900px) {

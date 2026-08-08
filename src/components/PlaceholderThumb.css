@@ -10,12 +10,15 @@
   font-family: var(--font-mono);
   font-size: clamp(2rem, 4vw, 4rem);
   font-weight: 600;
-  color: var(--color-text-muted);
+  /* Fixed, not theme-aware — the block itself is always a fixed dark
+     swatch (see below), so its label/icon must stay a fixed light gray
+     to stay legible regardless of the page theme. */
+  color: var(--gray-400);
   opacity: 0.55;
 }
 
 .placeholder-thumb__icon {
-  color: var(--color-text-muted);
+  color: var(--gray-400);
   opacity: 0.5;
 }
 

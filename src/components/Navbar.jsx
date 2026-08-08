@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { PhoneIcon } from './Icons'
+import ThemeToggle from './ThemeToggle'
 import './Navbar.css'
 
 const LINKS = [
@@ -47,6 +48,7 @@ function Navbar() {
         </nav>
 
         <div className="navbar__actions">
+          <ThemeToggle />
           <a href="/#contact" className="navbar__phone" aria-label="Call us">
             <PhoneIcon width={18} height={18} />
           </a>

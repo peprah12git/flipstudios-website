@@ -14,7 +14,6 @@ const TESTIMONIALS = [
     quote:
       'FlipStudios helped us design and deploy our fintech app with incredible precision. Their UX team understood our audience perfectly, and the devs delivered a smooth, secure platform.',
     photo: abigailPhoto,
-    area: 'a',
   },
   {
     name: 'Kofi Armah',
@@ -23,7 +22,6 @@ const TESTIMONIALS = [
     quote:
       'They didn’t just build an online store - they built an experience. Sales went up, bounce rates went down, and our customers keep coming back. Couldn’t ask for a better partner!',
     initials: 'KA',
-    area: 'b',
   },
   {
     name: 'Michael Smith',
@@ -32,7 +30,6 @@ const TESTIMONIALS = [
     quote:
       'FlipStudios brought our vision to life faster than we imagined. Their attention to detail and ability to merge creativity with technology set them apart. We now have a product our users genuinely love.',
     photo: michaelPhoto,
-    area: 'c',
   },
   {
     name: 'Samuel Adu',
@@ -41,7 +38,6 @@ const TESTIMONIALS = [
     quote:
       'We needed a partner who could translate complex requirements into a simple, scalable system — FlipStudios did exactly that. Their professionalism and technical expertise were outstanding.',
     initials: 'SA',
-    area: 'd',
   },
   {
     name: 'Linda Mensah',
@@ -50,7 +46,6 @@ const TESTIMONIALS = [
     quote:
       'Our logistics workflows were held together with spreadsheets before FlipStudios stepped in. Now everything is tracked in real time, and our dispatch team saves hours every single day.',
     photo: lindaPhoto,
-    area: 'e',
   },
   {
     name: 'Nanayaa Agyeman',
@@ -59,16 +54,12 @@ const TESTIMONIALS = [
     quote:
       'This was our third project with FlipStudios, and they’ve never disappointed. They communicate clearly, deliver on time, and continuously improve based on feedback. True long-term partners.',
     initials: 'NA',
-    area: 'f',
   },
 ]
 
 function TestimonialCard({ t }) {
   return (
-    <RevealItem
-      as="article"
-      className={`testimonial-card testimonial-card--${t.area}`}
-    >
+    <RevealItem as="article" className="testimonial-card">
       <header className="testimonial-card__header">
         <span className="testimonial-card__avatar">
           {t.photo ? (

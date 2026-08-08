@@ -11,6 +11,19 @@
       rel="stylesheet"
     />
     <title>FlipStudios</title>
+    <script>
+      // Applied before first paint so the stored theme renders immediately —
+      // dark is the default, light is only used when explicitly saved.
+      (function () {
+        try {
+          if (localStorage.getItem('flipstudios-theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light')
+          }
+        } catch {
+          // localStorage unavailable — fall back to the default dark theme
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

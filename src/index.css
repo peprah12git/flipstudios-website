@@ -12,7 +12,7 @@
   --gray-100: #e9eaeb;
   --gray-50: #f6f6f7;
 
-  /* ---- Surfaces & text (dark, primary theme) ---- */
+  /* ---- Surfaces & text (dark theme — default) ---- */
   --color-bg: var(--gray-950);
   --color-bg-darker: #060707;
   --color-card: var(--gray-900);
@@ -20,21 +20,19 @@
   --color-text: #f3f4f4;
   --color-text-muted: var(--gray-400);
 
-  /* ---- Surfaces & text (light, alternating sections) ---- */
-  --color-surface-light: #ffffff;
-  --color-surface-light-muted: #f6f6f5;
-  --color-surface-line: #e2e3e2;
-  --color-heading-light: #15171a;
-  --color-body-light: #5a5d61;
-
   /* ---- Accent (single flat accent, used sparingly) ---- */
+  /* Fixed — same bright value in both themes; only used on flat filled
+     surfaces (buttons, badges) paired with --color-on-accent. */
   --color-accent: #e3f27a;
   --color-accent-dark: #cddb5e;
   --color-on-accent: #14170a;
+  /* Theme-aware — used when accent appears as foreground (text/icons/
+     borders/markers) directly on the page, so it stays legible on both
+     a dark and a light background. */
+  --color-accent-text: var(--color-accent);
 
   /* ---- Grid/dot texture (flat, monochrome only) ---- */
   --grid-line-dark: rgba(255, 255, 255, 0.05);
-  --grid-line-light: rgba(10, 12, 11, 0.06);
 
   /* ---- Typography ---- */
   --font-sans: "Instrument Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -74,6 +72,23 @@
   --max-width: 1200px;
 
   color-scheme: dark;
+}
+
+/* ---- Light theme — same tokens, flipped values; dark stays the default ---- */
+:root[data-theme='light'] {
+  --color-bg: var(--gray-50);
+  --color-bg-darker: var(--gray-100);
+  --color-card: #ffffff;
+  --color-card-border: var(--gray-200);
+  --color-text: var(--gray-900);
+  --color-text-muted: var(--gray-500);
+
+  /* Same accent hue, darkened so it stays AA-legible as text on a light page. */
+  --color-accent-text: #5c6b1a;
+
+  --grid-line-dark: rgba(10, 12, 11, 0.06);
+
+  color-scheme: light;
 }
 
 * {
@@ -204,7 +219,7 @@ p {
 .eyebrow {
   display: inline-block;
   font-family: var(--font-mono);
-  color: var(--color-accent);
+  color: var(--color-accent-text);
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -219,10 +234,5 @@ p {
 /* ---- Flat, monochrome background textures (no color washes) ---- */
 .bg-dot-grid {
   background-image: radial-gradient(var(--grid-line-dark) 1px, transparent 1px);
-  background-size: 28px 28px;
-}
-
-.bg-dot-grid--light {
-  background-image: radial-gradient(var(--grid-line-light) 1px, transparent 1px);
   background-size: 28px 28px;
 }

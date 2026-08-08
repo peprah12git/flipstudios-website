@@ -39,7 +39,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--color-accent);
+  background: var(--color-accent-text);
 }
 
 /* Rows (pricing / tracker mockups) */
@@ -108,7 +108,7 @@
 .why-art__row-bar-fill {
   display: block;
   height: 100%;
-  background: var(--gray-400);
+  background: var(--color-text-muted);
 }
 
 /* Network */
@@ -123,9 +123,9 @@
 }
 
 .why-art--network circle {
-  fill: var(--gray-500);
+  fill: var(--color-text-muted);
 }
 
 .why-art--network circle.is-accent {
-  fill: var(--color-accent);
+  fill: var(--color-accent-text);
 }

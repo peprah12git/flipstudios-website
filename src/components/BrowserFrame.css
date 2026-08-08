@@ -1,4 +1,15 @@
 .browser-frame {
+  /* A browser window is a "screenshot" of a product — like a photo, it keeps
+     its own fixed dark chrome regardless of the page's light/dark theme.
+     Scoping these tokens here means everything nested inside (chrome, url
+     bar, mockups, placeholders) automatically renders dark without each of
+     those components needing their own theme handling. */
+  --color-bg: var(--gray-950);
+  --color-card: var(--gray-900);
+  --color-card-border: var(--gray-700);
+  --color-text: #f3f4f4;
+  --color-text-muted: var(--gray-400);
+
   background: var(--color-card);
   border: var(--border-width) solid var(--color-card-border);
   border-radius: var(--radius-lg);
